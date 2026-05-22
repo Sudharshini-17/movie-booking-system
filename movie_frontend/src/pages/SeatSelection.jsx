@@ -18,7 +18,7 @@ const SeatSelection = () => {
   useEffect(() => {
     const token = localStorage.getItem("access");
 
-    fetch("http://127.0.0.1:8000/api/bookings/available_seats/?show=1", {
+    fetch("https://movie-booking-system-jzt2.onrender.com/api/bookings/available_seats/?show=1", {
       headers: {
         Authorization: `Bearer ${token}`
       }

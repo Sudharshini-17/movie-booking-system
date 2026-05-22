@@ -32,7 +32,7 @@ const Checkout = () => {
 
     try {
       const seatCheckRes = await fetch(
-        "http://127.0.0.1:8000/api/bookings/available_seats/?show=1",
+        "https://movie-booking-system-jzt2.onrender.com/api/bookings/available_seats/?show=1",
         {
           headers: {
             Authorization: `Bearer ${token}`,

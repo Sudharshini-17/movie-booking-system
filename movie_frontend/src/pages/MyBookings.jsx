@@ -6,7 +6,7 @@ const MyBookings = () => {
   useEffect(() => {
     const token = localStorage.getItem("access");
 
-    fetch("http://127.0.0.1:8000/api/bookings/my_bookings/", {
+    fetch("https://movie-booking-system-jzt2.onrender.com/api/bookings/my_bookings/", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
