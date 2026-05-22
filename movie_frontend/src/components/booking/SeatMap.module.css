@@ -1,0 +1,154 @@
+.seatMapContainer {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.screen {
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.screenCurve {
+  height: 40px;
+  border-top: 3px solid var(--primary-accent);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 -15px 30px -10px var(--primary-accent-glow);
+  margin-bottom: 0.5rem;
+}
+
+.screenText {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.seatSample {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px 4px 8px 8px;
+}
+
+.seatsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 600px; /* Ensure map doesn't squish too much */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rowLabel {
+  width: 20px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+.rowSeats {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.aisle {
+  width: 30px;
+}
+
+.seat {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px 4px 8px 8px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.seatNumber {
+  font-size: 0.6rem;
+  color: transparent; /* Hide number until hover */
+  font-weight: 600;
+}
+
+.seat:hover:not(:disabled) {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.seat:hover .seatNumber {
+  color: white;
+}
+
+/* Status Colors */
+.available {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-color);
+}
+
+.available:hover {
+  border-color: var(--primary-accent);
+}
+
+.selected {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 10px var(--primary-accent-glow);
+}
+
+.selected .seatNumber {
+  color: white;
+}
+
+.locked {
+  background-color: #f59e0b; /* Amber/Orange */
+  border-color: #f59e0b;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.booked {
+  background-color: #3f3f46;
+  border-color: #27272a;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Make seats look slightly like chairs */
+.seat::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 2px;
+  right: 2px;
+  height: 4px;
+  background: inherit;
+  border-radius: 4px;
+  opacity: 0.8;
+}

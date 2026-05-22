@@ -1,0 +1,65 @@
+.pageWrapper {
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-dark);
+}
+
+.header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 70px; /* Below navbar */
+  z-index: 10;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--primary-accent);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.mainContent {
+  display: flex;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.seatMapCol {
+  flex: 1;
+  min-width: 0; /* Prevents overflow issues */
+}
+
+.summaryCol {
+  flex: 0 0 380px;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+  }
+  
+  .summaryCol {
+    flex: auto;
+  }
+}

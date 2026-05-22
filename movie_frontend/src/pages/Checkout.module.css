@@ -1,0 +1,219 @@
+.checkoutContainer {
+  display: flex;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  min-height: calc(100vh - 80px);
+}
+
+.leftCol {
+  flex: 2;
+}
+
+.rightCol {
+  flex: 1;
+  min-width: 350px;
+}
+
+.paymentPanel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timer {
+  background: rgba(229, 9, 20, 0.1);
+  color: var(--primary-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.expired {
+  color: #ef4444;
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.secureBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mockStripeWidget {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.widgetTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Simulating Stripe elements */
+.mockInput {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+}
+
+.cardIcons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.visaIcon, .mcIcon {
+  width: 30px;
+  height: 20px;
+  border-radius: 2px;
+  background: #333;
+}
+
+.visaIcon { background: #1434CB; }
+.mcIcon { background: #EB001B; }
+
+.payBtn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.payBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.summaryPanel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.summaryPanel h3 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.movieDetails {
+  margin-bottom: 1.5rem;
+}
+
+.movieDetails h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.movieDetails p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.ticketDetails {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.summaryRow:last-child {
+  margin-bottom: 0;
+}
+
+.summaryRow span:last-child {
+  font-weight: 500;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+@media (max-width: 900px) {
+  .checkoutContainer {
+    flex-direction: column-reverse;
+  }
+  .rightCol {
+    width: 100%;
+  }
+  .summaryPanel {
+    position: static;
+  }
+}

@@ -1,0 +1,131 @@
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-accent);
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.15);
+}
+
+.posterContainer {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .poster {
+  transform: scale(1.05);
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fbbf24; /* Yellow star */
+  z-index: 2;
+}
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: 1;
+}
+
+.card:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.hoverRuntime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cardContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chipsContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.chip {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.languageContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.language {
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.dot {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

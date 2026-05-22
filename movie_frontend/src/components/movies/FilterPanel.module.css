@@ -1,0 +1,150 @@
+.panel {
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.clearBtn {
+  color: var(--primary-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.clearBtn:hover {
+  text-decoration: underline;
+}
+
+.section {
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-main);
+  padding: 0.5rem 0;
+}
+
+.sectionTitle {
+  font-weight: 500;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  group: hover;
+}
+
+.checkboxWrapper {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-right: 0.75rem;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.checkboxCustom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border: 1px solid var(--text-muted);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.optionLabel:hover .checkboxCustom {
+  border-color: var(--primary-accent);
+}
+
+.checkbox:checked ~ .checkboxCustom {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+
+.checkbox:checked ~ .checkboxCustom:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.optionName {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.optionLabel:hover .optionName {
+  color: var(--text-main);
+}
+
+.checkbox:checked ~ .optionName {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.optionCount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Skeleton Loading Animation */
+.skeletonOption {
+  height: 24px;
+  width: 100%;
+  background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

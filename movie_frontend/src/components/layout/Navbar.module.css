@@ -1,0 +1,97 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 0;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.accent {
+  color: var(--primary-accent);
+}
+
+.searchBar {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBtn {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.iconBtn:hover {
+  color: var(--text-main);
+}
+
+.profileBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.profileBtn:hover {
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    display: none; /* Hide on mobile for now */
+  }
+}

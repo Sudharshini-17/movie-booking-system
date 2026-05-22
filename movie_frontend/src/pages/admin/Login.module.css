@@ -1,0 +1,119 @@
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at top right, rgba(229, 9, 20, 0.1), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent 40%);
+}
+
+.loginBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp var(--transition-normal);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(229, 9, 20, 0.1);
+  color: var(--primary-accent);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+}
+
+.inputWrapper input {
+  width: 100%;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.inputWrapper input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  font-size: 1.05rem;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

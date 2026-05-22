@@ -1,0 +1,268 @@
+.confirmationContainer {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.successHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideDown var(--transition-normal);
+}
+
+.successIcon {
+  color: #22c55e;
+  margin-bottom: 1rem;
+}
+
+.successHeader h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.successHeader p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Digital Ticket Design */
+.ticketCard {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 3rem;
+  animation: scaleIn var(--transition-normal) 0.1s both;
+}
+
+.ticketLeft {
+  flex: 0 0 160px;
+  padding: 1.5rem;
+  border-right: 2px dashed var(--border-color);
+}
+
+.ticketPoster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.ticketMiddle {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px dashed var(--border-color);
+}
+
+.movieInfo {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.movieInfo h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.language {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.showInfo, .seatInfo {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.seatInfo {
+  margin-bottom: 0;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.value {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.ticketRight {
+  flex: 0 0 160px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrPlaceholder {
+  width: 100px;
+  height: 100px;
+  background: white;
+  padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.qrGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 1px;
+}
+
+.qrCell {
+  background-color: black;
+}
+
+.scanText {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Cutouts to make it look like a ticket */
+.cutoutTop, .cutoutBottom {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-dark);
+  border-radius: 50%;
+  right: 145px; /* Aligned with right border */
+  z-index: 2;
+  border: 1px solid var(--border-color);
+}
+
+.cutoutTop {
+  top: -16px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.cutoutBottom {
+  bottom: -16px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.actionBtn, .actionBtnAlt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+.actionBtnAlt {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.actionBtnAlt:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-muted);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--primary-accent);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .ticketCard {
+    flex-direction: column;
+  }
+  
+  .ticketLeft {
+    border-right: none;
+    border-bottom: 2px dashed var(--border-color);
+    flex: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ticketPoster {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .ticketMiddle {
+    border-right: none;
+    border-bottom: 2px dashed var(--border-color);
+  }
+  
+  .cutoutTop, .cutoutBottom {
+    display: none; /* Hide cutouts on mobile for simplicity */
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
